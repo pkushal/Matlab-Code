@@ -1,3 +1,6 @@
+% I found that even though the sampling frequency is increased to say 100000, the correlation values is not affected.
+% The only factor that can vary the correlation values is the sigma value.
+
 clear all
 close all
 clc
@@ -77,7 +80,7 @@ subplot(3,2,6);
 plot(x,f34)
 title('Sum of f3 and f4');
 
-%% Correlation analysis
+%% Correlation analysis of the gauss pulses
 % std_correlation121= sum(f12.*f1)
 % normalized_correlation121= std_correlation121/sqrt(sum(f12.^2).*sum(f1.^2))
 c121= corrcoef(f12,f1)
