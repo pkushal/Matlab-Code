@@ -1,0 +1,155 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000000633f62ba, pid=5708, tid=4356
+#
+# JRE version: 6.0_17-b04
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (14.3-b01 mixed mode windows-amd64 )
+# Problematic frame:
+# C  0x00000000633f62ba
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000061a63800):  JavaThread "Thread-40" [_thread_in_native, id=4356, stack(0x000000000a5d0000,0x000000000a650000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x0000000000000000
+
+Registers:
+EAX=0x000000000a64eee8, EBX=0x0000000031714288, ECX=0x0000000000000000, EDX=0x00000000fffff8e0
+ESP=0x000000000a64eec0, EBP=0x000000000a64ef70, ESI=0x000000003016ab68, EDI=0x000000002ce55969
+EIP=0x00000000633f62ba, EFLAGS=0x0000000000010202
+
+Top of Stack: (sp=0x000000000a64eec0)
+0x000000000a64eec0:   0000000000000000 000000000a64eec8
+0x000000000a64eed0:   000000003009d54a 000000000a64ef20
+0x000000000a64eee0:   fffffffffffffffe 0000000000000000
+0x000000000a64eef0:   0000000000000000 0000000000000000
+0x000000000a64ef00:   000000002ce55969 000000002ce61588
+0x000000000a64ef10:   0000000031714288 000000003016ab68
+0x000000000a64ef20:   0000000041d653d8 000000000a64ef28
+0x000000000a64ef30:   000000000a64ef30 0000000000000000
+0x000000000a64ef40:   000000000a64ef88 00000000317152d8
+0x000000000a64ef50:   0000000000000000 0000000031714288
+0x000000000a64ef60:   0000000000000000 000000000a64ef90
+0x000000000a64ef70:   000000000a64efd0 000000002ce559f3
+0x000000000a64ef80:   00000000317146a8 000000002ce5de57
+0x000000000a64ef90:   000000000a64ef90 0000000031713bb0
+0x000000000a64efa0:   000000000a64efe8 00000000317152d8
+0x000000000a64efb0:   0000000000000000 0000000031713bc8 
+
+Instructions: (pc=0x00000000633f62ba)
+0x00000000633f62aa:   8d 4c 24 28 ff 15 34 da 07 00 90 48 8b 4c 24 28
+0x00000000633f62ba:   48 8b 01 48 8d 54 24 60 ff 50 08 48 8b 74 24 60 
+
+
+Stack: [0x000000000a5d0000,0x000000000a650000],  sp=0x000000000a64eec0,  free space=507k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x00000000633f62ba
+j  com.mathworks.mvm.MvmFactory.getCurrentMVM()Lcom/mathworks/mvm/MVM;+0
+j  com.mathworks.mvm.context.MvmContext.get()Lcom/mathworks/mvm/MVM;+14
+j  com.mathworks.appmanagement.SettingsUtility.getSettingPath()Lcom/mathworks/services/settings/SettingPath;+0
+j  com.mathworks.appmanagement.SettingsUtility.getSetting(Lcom/mathworks/appmanagement/AppPrefKey;)Lcom/mathworks/services/settings/Setting;+4
+j  com.mathworks.appmanagement.SettingsUtility.isStringSettingSet(Lcom/mathworks/appmanagement/AppPrefKey;)Ljava/lang/Boolean;+1
+j  com.mathworks.appmanagement.AppManagementApiImpl.getMyAppsLocation()Ljava/io/File;+3
+j  com.mathworks.appmanagement.AppManagementApiImpl.getInstalledAppsMap()Ljava/util/Map;+9
+j  com.mathworks.appmanagement.AppManagementApiImpl.getInstalledApps()[Lcom/mathworks/appmanagement/AppMetadata;+9
+j  com.mathworks.appmanagement.AppManagementApiImpl.access$400(Lcom/mathworks/appmanagement/AppManagementApiImpl;)[Lcom/mathworks/appmanagement/AppMetadata;+1
+j  com.mathworks.appmanagement.AppManagementApiImpl$1.run()V+15
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.mathworks.mvm.MvmFactory.nativeGetCurrentMvmHandle()J+0
+j  com.mathworks.mvm.MvmFactory.getCurrentMVM()Lcom/mathworks/mvm/MVM;+0
+j  com.mathworks.mvm.context.MvmContext.get()Lcom/mathworks/mvm/MVM;+14
+j  com.mathworks.appmanagement.SettingsUtility.getSettingPath()Lcom/mathworks/services/settings/SettingPath;+0
+j  com.mathworks.appmanagement.SettingsUtility.getSetting(Lcom/mathworks/appmanagement/AppPrefKey;)Lcom/mathworks/services/settings/Setting;+4
+j  com.mathworks.appmanagement.SettingsUtility.isStringSettingSet(Lcom/mathworks/appmanagement/AppPrefKey;)Ljava/lang/Boolean;+1
+j  com.mathworks.appmanagement.AppManagementApiImpl.getMyAppsLocation()Ljava/io/File;+3
+j  com.mathworks.appmanagement.AppManagementApiImpl.getInstalledAppsMap()Ljava/util/Map;+9
+j  com.mathworks.appmanagement.AppManagementApiImpl.getInstalledApps()[Lcom/mathworks/appmanagement/AppMetadata;+9
+j  com.mathworks.appmanagement.AppManagementApiImpl.access$400(Lcom/mathworks/appmanagement/AppManagementApiImpl;)[Lcom/mathworks/appmanagement/AppMetadata;+1
+j  com.mathworks.appmanagement.AppManagementApiImpl$1.run()V+15
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x0000000061a63800 JavaThread "Thread-40" [_thread_in_native, id=4356, stack(0x000000000a5d0000,0x000000000a650000)]
+  0x0000000061a6e000 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=5180, stack(0x0000000029080000,0x0000000029100000)]
+  0x0000000061a63000 JavaThread "Inactive RequestProcessor thread [Was:TimedSoftReference/org.openide.util.TimedSoftReference]" daemon [_thread_blocked, id=5168, stack(0x000000000a740000,0x000000000a7c0000)]
+  0x0000000061a6c800 JavaThread "Active Reference Queue Daemon" daemon [_thread_blocked, id=4192, stack(0x000000000a950000,0x000000000a9d0000)]
+  0x0000000061a6d000 JavaThread "Timer-8" daemon [_thread_blocked, id=7040, stack(0x000000000a8d0000,0x000000000a950000)]
+  0x0000000061a69000 JavaThread "Timer-7" daemon [_thread_blocked, id=5796, stack(0x000000000a7d0000,0x000000000a850000)]
+  0x0000000061a6a000 JavaThread "Explorer NavigationContext request queue" [_thread_blocked, id=5136, stack(0x000000000a6c0000,0x000000000a740000)]
+  0x0000000061a69800 JavaThread "AddressBar directory emptiness poller" [_thread_blocked, id=5488, stack(0x0000000072840000,0x00000000728c0000)]
+  0x0000000061a68000 JavaThread "Explorer Refresh Service 1427582905" [_thread_blocked, id=6192, stack(0x00000000727c0000,0x0000000072840000)]
+  0x0000000061a66000 JavaThread "Timer-1" daemon [_thread_blocked, id=6848, stack(0x0000000072560000,0x00000000725e0000)]
+  0x0000000061a62800 JavaThread "TimerQueue" daemon [_thread_blocked, id=4624, stack(0x00000000628a0000,0x0000000062920000)]
+  0x0000000061a65000 JavaThread "Thread-5" daemon [_thread_blocked, id=8560, stack(0x0000000062600000,0x0000000062680000)]
+  0x0000000061427000 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=7504, stack(0x0000000062580000,0x0000000062600000)]
+  0x0000000061429000 JavaThread "com.google.common.base.internal.Finalizer" daemon [_thread_blocked, id=7320, stack(0x0000000062500000,0x0000000062580000)]
+  0x0000000061422800 JavaThread "AWT-Windows" daemon [_thread_in_native, id=7556, stack(0x00000000623f0000,0x0000000062470000)]
+  0x0000000061425800 JavaThread "AWT-Shutdown" [_thread_blocked, id=7420, stack(0x0000000062370000,0x00000000623f0000)]
+  0x0000000061424000 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=8124, stack(0x00000000622f0000,0x0000000062370000)]
+  0x0000000061422000 JavaThread "Timer-0" [_thread_blocked, id=7272, stack(0x0000000062270000,0x00000000622f0000)]
+  0x0000000061423800 JavaThread "EventMgr Dispatcher" daemon [_thread_in_native, id=9116, stack(0x000000000a9d0000,0x000000000e9d0000)]
+  0x0000000060395800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=9008, stack(0x0000000060450000,0x00000000604d0000)]
+  0x000000006038d000 JavaThread "CompilerThread1" daemon [_thread_blocked, id=6316, stack(0x000000007bca0000,0x000000007fca0000)]
+  0x000000006038c000 JavaThread "CompilerThread0" daemon [_thread_blocked, id=4872, stack(0x000000006b570000,0x000000006f570000)]
+  0x000000006038b000 JavaThread "Attach Listener" daemon [_thread_blocked, id=3784, stack(0x000000000ff80000,0x0000000010000000)]
+  0x0000000060355000 JavaThread "Finalizer" daemon [_thread_blocked, id=4632, stack(0x000000000ff00000,0x000000000ff80000)]
+  0x0000000060354800 JavaThread "Reference Handler" daemon [_thread_blocked, id=8200, stack(0x000000000fe80000,0x000000000ff00000)]
+  0x0000000009e30800 JavaThread "main" [_thread_in_native, id=8956, stack(0x0000000001000000,0x0000000005000000)]
+
+Other Threads:
+  0x0000000060350800 VMThread [stack: 0x0000000067570000,0x000000006b570000] [id=6432]
+  0x00000000603ba800 WatcherThread [stack: 0x000000007fff0000,0x0000000083ff0000] [id=7748]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 31040K, used 20311K [0x0000000041150000, 0x0000000043c90000, 0x0000000044250000)
+  eden space 18944K, 69% used [0x0000000041150000,0x0000000041e25540,0x00000000423d0000)
+  from space 12096K, 59% used [0x00000000430c0000,0x00000000437c0918,0x0000000043c90000)
+  to   space 12672K, 0% used [0x00000000423d0000,0x00000000423d0000,0x0000000043030000)
+ PSOldGen        total 56320K, used 38069K [0x0000000037e50000, 0x000000003b550000, 0x0000000041150000)
+  object space 56320K, 67% used [0x0000000037e50000,0x000000003a37d518,0x000000003b550000)
+ PSPermGen       total 103360K, used 59159K [0x000000002fe50000, 0x0000000036340000, 0x0000000037e50000)
+  object space 103360K, 57% used [0x000000002fe50000,0x0000000033815ea0,0x0000000036340000)
+
+Dynamic libraries:
+0x00007ff72a640000 - 0x00007ff72a66d000 	C:\Program Files\MATLAB\R2012b\bin\win64\MATLAB.exe
+0x00007ff978850000 - 0x00007ff9789f9000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ff978710000 - 0x00007ff978849000 	C:\WINDOWS\system32\KERNEL32.DLL
+0x00007ff975ca0000 - 0x00007ff975daf000 	C:\WINDOWS\system32\KERNELBASE.dll
+0x0000000074460000 - 0x000000007451f000 	C:\Program Files\MATLAB\R2012b\bin\win64\libut.dll
+0x0000000180000000 - 0x00000001802dc000 	C:\Program Files\MATLAB\R2012b\bin\win64\libmwservices.dll
+0x0000000074970000 - 0x0000000074a31000 	C:\Program Files\MATLAB\R2012b\bin\win64\mcr.dll
+0x0000000075e50000 - 0x0000000075f23000 	C:\WINDOWS\WinSxS\amd64_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.8387_none_08e793bfa83a89b5\MSVCP90.dll
+0x0000000075f30000 - 0x0000000075fd3000 	C:\WINDOWS\WinSxS\amd64_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.8387_none_08e793bfa83a89b5\MSVCR90.dll
+0x00000000758a0000 - 0x000000007595c000 	C:\Program Files\MATLAB\R2012b\bin\win64\libmwi18n.dll
+0x0000000073f70000 - 0x000000007411d000 	C:\Program Files\MATLAB\R2012b\bin\win64\libmwfl.dll
+0x000000007a3b0000 - 0x000000007a3c0000 	C:\Program Files\MATLAB\R2012b\bin\win64\boost_date_time-vc90-mt-1_44.dll
+0x000000007a560000 - 0x000000007a569000 	C:\Program Files\MATLAB\R2012b\bin\win64\boost_system-vc90-mt-1_44.dll
+0x000000007a2d0000 - 0x000000007a2e2000 	C:\Program Files\MATLAB\R2012b\bin\win64\boost_thread-vc90-mt-1_44.dll
+0x00000000050f0000 - 0x00000000051ad000 	C:\Program Files\MATLAB\R2012b\bin\win64\boost_log-vc90-mt-1_44.dll
+0x00000000752f0000 - 0x0000000075461000 	C:\Program Files\MATLAB\R2012b\bin\win64\icuuc44.dll
+0x00000000752d0000 - 0x00000000752e3000 	C:\Program Files\MATLAB\R2012b\bin\win64\icuio44.dll
+0x00000000051b0000 - 0x00000000051f6000 	C:\Program Files\MATLAB\R2012b\bin\win64\tbb.dll
+0x00007ff9767c0000 - 0x00007ff9767c7000 	C:\WINDOWS\system32\PSAPI.DLL
+0x00007ff95df60000 - 0x00007ff95e0e8000 	C:\WINDOWS\SYSTEM32\dbghelp.dll
+0x00007ff976bf0000 - 0x00007ff976c95000 	C:\WINDOWS\system32\ADVAPI32.dll
+0x00007ff976a70000 - 0x00007ff976be1000 	C:\WINDOWS\system32\USER32.dll
+0x0000000075a20000 - 0x0000000075af3000 	C:\Program Files\MATLAB\R2012b\bin\win64\libmx.dll
+0x0000000005310000 - 0x000000000535d000 	C:\Program Files\MATLAB\R2012b\bin\win64\libmwregexp.dll
+0x0000000005360000 - 0x0000000005383000 	C:\Program Files\MATLAB\R2012b\bin\win64\libmwmfl_scalar.dll
