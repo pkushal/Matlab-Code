@@ -13,7 +13,7 @@ x=(-3.25:dt:3.25); % for normal axis
 
 
 %% genetation of gaussian pulse
-sigma= .8;
+sigma= .9;
 fb=exp(-(x).^2/(2*sigma^2))./(sigma*sqrt(2*pi));
 f1=fb.*(-x./sigma^2);
 f2=fb.*((x.^2.-sigma^2)./(sigma^4));
@@ -83,6 +83,7 @@ title('Sum of f3 and f4');
 %% Correlation analysis of the gauss pulses
 % std_correlation121= sum(f12.*f1)
 % normalized_correlation121= std_correlation121/sqrt(sum(f12.^2).*sum(f1.^2))
+
 c121= corrcoef(f12,f1)
 c122= corrcoef(f12,f2)
 odd312=corrcoef(f12,f3)
@@ -112,6 +113,24 @@ c334= corrcoef(f34,f3)
 c434= corrcoef(f34,f4)
 odd134=corrcoef(f34,f1)
 odd234=corrcoef(f34,f2)
+%%
+%%correlation between the pure gaussian derivatives
+
+c12=corrcoef(f1,f2)
+c13=corrcoef(f1,f3)
+c14=corrcoef(f1,f4)
+
+c21=corrcoef(f2,f1)
+c23=corrcoef(f2,f3)
+c24=corrcoef(f2,f4)
+
+c31=corrcoef(f3,f1)
+c32=corrcoef(f3,f2)
+c34=corrcoef(f3,f4)
+
+c41=corrcoef(f4,f1)
+c42=corrcoef(f4,f2)
+c43=corrcoef(f4,f3)
 
 %% finding the frequency spectrum of the above gaussian pulse
 figure(3)
